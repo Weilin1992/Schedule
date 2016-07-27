@@ -23,23 +23,17 @@
         <div id="signup">
           <h1>Sign Up for Free</h1>
 
-          <form action="/" method="post">
+          <form action="" method="post">{% csrf_token %}
 
-          <div class="top-row">
+
             <div class="field-wrap">
               <label>
-                First Name<span class="req">*</span>
+                UserName<span class="req">*</span>
               </label>
               <input type="text" required autocomplete="off" />
             </div>
 
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
-          </div>
+
 
           <div class="field-wrap">
             <label>
