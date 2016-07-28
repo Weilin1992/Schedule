@@ -15,10 +15,24 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from account import views
+
+from rest_framework import routers
 from api import views
 
+# router = routers.DefaultRouter()
+# router.register(r'accounts',views.AccountViewSet)
+#
+
+accountlist = views.AccountViewSet.as_view(
+{
+    'get':'list',
+    'post':'create'
+}
+)
+
 urlpatterns = [
-    url(r'^account/',include('account.urls')),
-    url(r'^api/',include('api.urls')),
+    #url(r'^',include(router.urls)),
+    #url(r'^account/',include('account.urls')),
+    url(r'^accounts/$',accountlist,name='account'),
+
 ]
